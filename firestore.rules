@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow users read and write access to their own user data
+    match /users/{uid}/{document=**} {
+      allow read, create, update: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}
