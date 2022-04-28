@@ -48,7 +48,7 @@ Move a dummy test _after_ the call to `initializeTestEnvironment()`:
 
 Before:
 
-```
+```typescript
 describe('Firestore rules', async () => {
   // MOVE THIS...
   it('should pass also', async () => {
@@ -74,7 +74,7 @@ describe('Firestore rules', async () => {
 
 After:
 
-```
+```typescript
 describe('Firestore rules', async () => {
   const testEnv = await initializeTestEnvironment({
     projectId: PROJECT_ID,
